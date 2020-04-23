@@ -1,9 +1,10 @@
-A serverless website, powered by cloudflare workers
+# A serverless website, powered by cloudflare workers
+
 =====
 
 This started off a short experiment to see if I could make a simple static website that was easy to update using only cloudflare workers, but it turned into so much more.
 
-## Serverless?
+## Serverless
 
 Not really, but there is no shell here. Just a lot of API calls:
 
@@ -15,7 +16,7 @@ Step 1) Register for cloudflare. Free tier will do
 
 Step 2) Enroll your domain in cloudflare. You Will need to create an "A" record. I just used a random IP from google
 
-Step 3) Enroll for workers. It isn't free, but hey nothing is.
+Step 3) Enroll for workers. It is indeed free now.
 
 Step 4) Enroll in the cloudflare KV beta from the workers page. Create a namespace
 
@@ -33,14 +34,11 @@ step 9) visit the bizare creation you've made
 
 index.html:
 
-~~~~
+```shell
  curl "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_UID/storage/kv/namespaces/$NAMESPACEID/values/index" -X PUT-H "X-Auth-Email: $CLOUDFLARE_EMAIL -H "X-Auth-Key: $CLODUFLARE_API_KEY" --data @index.html
-~~~~
+```
 
 styles.css:
-~~~~
+```shell
 curl "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_UID/storage/kv/namespaces/$NAMESPACEID/values/styles" -X PUT-H "X-Auth-Email: $CLOUDFLARE_EMAIL -H "X-Auth-Key: $CLODUFLARE_API_KEY" --data @styles.css
-~~~~
-
-
-
+```

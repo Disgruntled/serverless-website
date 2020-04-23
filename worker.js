@@ -18,7 +18,9 @@ addEventListener('fetch', event => {
 
     const index = await kv_variables.get("index")
     let response = new Response(index)
-    response.headers.set('content-type', 'text/html; Charset=UTF-8')
+    response.headers.set('Content-Type', 'text/html; Charset=UTF-8')
+    response.headers.set('Server', 'cloudflare-workers')
+    response.headers.set('Connection', 'keep-alive')
   
     
   
