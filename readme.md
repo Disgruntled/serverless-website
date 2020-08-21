@@ -35,7 +35,7 @@ step 9) visit the bizare creation you've made
 index.html:
 
 ```shell
- curl "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_UID/storage/kv/namespaces/$NAMESPACEID/values/index" -X PUT-H "X-Auth-Email: $CLOUDFLARE_EMAIL -H "X-Auth-Key: $CLODUFLARE_API_KEY" --data @index.html
+ curl "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_UID/storage/kv/namespaces/$NAMESPACEID/values/index" -X PUT -H "X-Auth-Email: $CLOUDFLARE_EMAIL -H "X-Auth-Key: $CLODUFLARE_API_KEY" --data @index.html
 ```
 
 styles.css:
